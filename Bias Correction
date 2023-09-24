@@ -1,0 +1,338 @@
+
+
+#Historical
+#!/bin/bash
+for file in *.nc
+do
+cdo subc,273.15 "ICC_His.nc" "ICC_His_C.nc";
+cdo remapbil,"IMD_0.5_for_remap.nc" "ICC_His_C.nc" "ICC_His_0.5.nc";
+cdo mul "ICC_His_0.5.nc" "mask_0.5.nc" "ICC_His_mask.nc";
+cdo splitmon -selmon,3,4,5,6 "ICC_His_mask.nc" "ICC_His_";
+cdo timmean "ICC_His_03.nc" "ICC_His_03_mean.nc";
+#step1 = obs mean – mo mean
+cdo sub "ob_03_mean.nc" "ICC_His_03_mean.nc" "step1_03_His.nc";
+#step2 = T*contr =mo + step1 
+cdo add "ICC_His_03.nc" "step1_03_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+cdo timstd "step3.nc" "step3_std.nc";
+#STEP4div ob std step3std
+cdo div "ob_03_std.nc" "step3_std.nc" "step4_03_His.nc"
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_03_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_His_03_bc.nc";
+cdo -f nc setcalendar,standard "ICC_His_03_bc.nc" "ICC_His_03_bc_35.nc";
+cdo timmean "ICC_His_03_bc_35.nc" "ICC_His_03_bc_mean.nc";
+cdo timmean "ICC_His_04.nc" "ICC_His_04_mean.nc";
+#step1 = obs mean – mo mean
+cdo sub "ob_04_mean.nc" "ICC_His_04_mean.nc" "step1_04_His.nc";
+#step2 = T*contr =mo + step1 
+cdo add "ICC_His_04.nc" "step1_04_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+cdo timstd "step3.nc" "step3_std.nc";
+#STEP4div ob std step3std
+cdo div "ob_04_std.nc" "step3_std.nc" "step4_04_His.nc"
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_04_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_His_04_bc.nc";
+cdo -f nc setcalendar,standard "ICC_His_04_bc.nc" "ICC_His_04_bc_35.nc";
+cdo timmean "ICC_His_04_bc_35.nc" "ICC_His_04_bc_mean.nc";
+cdo timmean "ICC_His_05.nc" "ICC_His_05_mean.nc";
+#step1 = obs mean – mo mean
+cdo sub "ob_05_mean.nc" "ICC_His_05_mean.nc" "step1_05_His.nc";
+#step2 = T*contr =mo + step1 
+cdo add "ICC_His_05.nc" "step1_05_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+cdo timstd "step3.nc" "step3_std.nc";
+#STEP4div ob std step3std
+cdo div "ob_05_std.nc" "step3_std.nc" "step4_05_His.nc"
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_05_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_His_05_bc.nc";
+cdo -f nc setcalendar,standard "ICC_His_05_bc.nc" "ICC_His_05_bc_35.nc";
+cdo timmean "ICC_His_05_bc_35.nc" "ICC_His_05_bc_mean.nc";
+cdo timmean "ICC_His_06.nc" "ICC_His_06_mean.nc";
+#step1 = obs mean – mo mean
+cdo sub "ob_06_mean.nc" "ICC_His_06_mean.nc" "step1_06_His.nc";
+#step2 = T*contr =mo + step1 
+cdo add "ICC_His_06.nc" "step1_06_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+cdo timstd "step3.nc" "step3_std.nc";
+#STEP4div ob std step3std
+cdo div "ob_06_std.nc" "step3_std.nc" "step4_06_His.nc"
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_06_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_His_06_bc.nc";
+cdo -f nc setcalendar,standard "ICC_His_06_bc.nc" "ICC_His_06_bc_35.nc";
+cdo timmean "ICC_His_06_bc_35.nc" "ICC_His_06_bc_mean.nc";
+
+#1.1 RCP4.5(Mid-term) R4_F1
+
+cdo subc,273.15 "ICC_R4_F1.nc" "ICC_R4_F1_C.nc";
+cdo remapbil,"IMD_0.5_for_remap.nc" "ICC_R4_F1_C.nc" "ICC_R4_F1_0.5.nc";
+cdo mul "ICC_R4_F1_0.5.nc" "mask_0.5.nc" "ICC_R4_F1_mask.nc";
+cdo splitmon -selmon,3,4,5,6 "ICC_R4_F1_mask.nc" "ICC_R4_F1_";
+#step1 = obs mean – mo mean
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F1_03.nc" "step1_03_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+#STEP4div ob std step3std
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_03_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F1_03_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F1_03_bc.nc" "ICC_R4_F1_03_bc_35.nc";
+cdo timmean "ICC_R4_F1_03_bc_35.nc" "ICC_R4_F1_03_bc_mean.nc";
+#04
+#step1 = obs mean – mo mean
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F1_04.nc" "step1_04_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+#STEP4div ob std step3std
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_04_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F1_04_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F1_04_bc.nc" "ICC_R4_F1_04_bc_35.nc";
+cdo timmean "ICC_R4_F1_04_bc_35.nc" "ICC_R4_F1_04_bc_mean.nc";
+#05
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F1_05.nc" "step1_05_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+#STEP4div ob std step3std
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_05_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F1_05_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F1_05_bc.nc" "ICC_R4_F1_05_bc_35.nc";
+cdo timmean "ICC_R4_F1_05_bc_35.nc" "ICC_R4_F1_05_bc_mean.nc";
+#06
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F1_06.nc" "step1_06_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#timstd  step3td 
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_06_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F1_06_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F1_06_bc.nc" "ICC_R4_F1_06_bc_35.nc";
+cdo timmean "ICC_R4_F1_06_bc_35.nc" "ICC_R4_F1_06_bc_mean.nc";
+
+#Future
+#RCP4.5(Long-term) R4_F2
+
+#ICC_R4_F2 model name
+cdo subc,273.15 "ICC_R4_F2.nc" "ICC_R4_F2_C.nc"; #convert kelvin to celsius 
+cdo remapbil,"IMD_0.5_for_remap.nc" "ICC_R4_F2_C.nc" "ICC_R4_F2_0.5.nc";
+cdo mul "ICC_R4_F2_0.5.nc" "mask_0.5.nc" "ICC_R4_F2_mask.nc";
+cdo splitmon -selmon,3,4,5,6 "ICC_R4_F2_mask.nc" "ICC_R4_F2_";
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F2_03.nc" "step1_03_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#STEP4div ob std step3std
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_03_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F2_03_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F2_03_bc.nc" "ICC_R4_F2_03_bc_35.nc";
+cdo timmean "ICC_R4_F2_03_bc_35.nc" "ICC_R4_F2_03_bc_mean.nc";
+#04
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F2_04.nc" "step1_04_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#STEP4div ob std step3std
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_04_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F2_04_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F2_04_bc.nc" "ICC_R4_F2_04_bc_35.nc";
+cdo timmean "ICC_R4_F2_04_bc_35.nc" "ICC_R4_F2_04_bc_mean.nc";
+#05
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F2_05.nc" "step1_05_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#STEP4div ob std step3std
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_05_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F2_05_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F2_05_bc.nc" "ICC_R4_F2_05_bc_35.nc";
+cdo timmean "ICC_R4_F2_05_bc_35.nc" "ICC_R4_F2_05_bc_mean.nc";
+#06
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R4_F2_06.nc" "step1_06_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_06_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R4_F2_06_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R4_F2_06_bc.nc" "ICC_R4_F2_06_bc_35.nc";
+cdo timmean "ICC_R4_F2_06_bc_35.nc" "ICC_R4_F2_06_bc_mean.nc";
+
+#1.3 RCP8.5(Mid-term) R8_F1
+
+#ICC_R8_F1
+cdo subc,273.15 "ICC_R8_F1.nc" "ICC_R8_F1_C.nc";
+cdo remapbil,"IMD_0.5_for_remap.nc" "ICC_R8_F1_C.nc" "ICC_R8_F1_0.5.nc";
+cdo mul "ICC_R8_F1_0.5.nc" "mask_0.5.nc" "ICC_R8_F1_mask.nc";
+cdo splitmon -selmon,3,4,5,6 "ICC_R8_F1_mask.nc" "ICC_R8_F1_";
+#step1 = obs mean – mo mean
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F1_03.nc" "step1_03_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#STEP4div ob std step3std
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_03_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F1_03_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F1_03_bc.nc" "ICC_R8_F1_03_bc_35.nc";
+cdo timmean "ICC_R8_F1_03_bc_35.nc" "ICC_R8_F1_03_bc_mean.nc";
+#04
+#step1 = obs mean – mo mean
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F1_04.nc" "step1_04_His.nc" "step2.nc";
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_04_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F1_04_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F1_04_bc.nc" "ICC_R8_F1_04_bc_35.nc";
+cdo timmean "ICC_R8_F1_04_bc_35.nc" "ICC_R8_F1_04_bc_mean.nc";
+#05
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F1_05.nc" "step1_05_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_05_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F1_05_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F1_05_bc.nc" "ICC_R8_F1_05_bc_35.nc";
+cdo timmean "ICC_R8_F1_05_bc_35.nc" "ICC_R8_F1_05_bc_mean.nc";
+#06
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F1_06.nc" "step1_06_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_06_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F1_06_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F1_06_bc.nc" "ICC_R8_F1_06_bc_35.nc";
+cdo timmean "ICC_R8_F1_06_bc_35.nc" "ICC_R8_F1_06_bc_mean.nc";
+
+#1.4 RCP8.5(Long-term) R8_F2
+
+#ICC_R8_F2
+cdo subc,273.15 "ICC_R8_F2.nc" "ICC_R8_F2_C.nc";
+cdo remapbil,"IMD_0.5_for_remap.nc" "ICC_R8_F2_C.nc" "ICC_R8_F2_0.5.nc";
+cdo mul "ICC_R8_F2_0.5.nc" "mask_0.5.nc" "ICC_R8_F2_mask.nc";
+cdo splitmon -selmon,3,4,5,6 "ICC_R8_F2_mask.nc" "ICC_R8_F2_";
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F2_03.nc" "step1_03_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_03_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F2_03_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F2_03_bc.nc" "ICC_R8_F2_03_bc_35.nc";
+cdo timmean "ICC_R8_F2_03_bc_35.nc" "ICC_R8_F2_03_bc_mean.nc";
+#04
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F2_04.nc" "step1_04_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_04_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F2_04_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F2_04_bc.nc" "ICC_R8_F2_04_bc_35.nc";
+cdo timmean "ICC_R8_F2_04_bc_35.nc" "ICC_R8_F2_04_bc_mean.nc";
+#05
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F2_05.nc" "step1_05_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_05_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F2_05_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F2_05_bc.nc" "ICC_R8_F2_05_bc_35.nc";
+cdo timmean "ICC_R8_F2_05_bc_35.nc" "ICC_R8_F2_05_bc_mean.nc";
+#06
+#step2 = T*contr =mo + step1 
+cdo add "ICC_R8_F2_06.nc" "step1_06_His.nc" "step2.nc";
+#timmean step2mean 
+cdo timmean "step2.nc" "step2_mean.nc";
+#step3 = T*cont2 
+cdo sub "step2.nc" "step2_mean.nc" "step3.nc";
+#step5 mul step3 step4 
+cdo mul "step3.nc" "step4_06_His.nc" "step5.nc";
+#.bc = step5 + step2_mean
+cdo add "step5.nc" "step2_mean.nc" "ICC_R8_F2_06_bc.nc";
+cdo -f nc setcalendar,standard "ICC_R8_F2_06_bc.nc" "ICC_R8_F2_06_bc_35.nc";
+cdo timmean "ICC_R8_F2_06_bc_35.nc" "ICC_R8_F2_06_bc_mean.nc"
+done
+
