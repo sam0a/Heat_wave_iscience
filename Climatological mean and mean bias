@@ -1,0 +1,12 @@
+#Climatological mean and mean bias for historical data
+#!/bin/bash
+for file in *.nc
+do
+cdo -selyear,1971/2000 "RCM_His_MAMJ.nc" "RCM_His_MAMJ_Climatology.nc";
+cdo timmean "RCM_His_MAMJ_Climatology.nc" "RCM_His_MAMJ_Climatological_mean.nc";
+cdo -selyear,1971/2000 "IIP_His_MAMJ_bias.nc" "IIP_His_MAMJ_Climatological_bias.nc";
+cdo timmean "RCM_His_MAMJ_Climatological_bias.nc" "RCM_His_MAMJ_Climatological_mean_bias.nc";
+done
+
+
+
