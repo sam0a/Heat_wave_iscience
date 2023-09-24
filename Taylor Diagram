@@ -1,7 +1,6 @@
+%%Read excel file containing raw and bias corrected model mean data for historical period
 
-
-
-%%Read excel file containing raw and bias corrected model mean data 
+%%calculate taylor statistics
 
 taylor_stats1 = taylor_statistics(ICN,IMD,'Data');
 taylor_stats2 = taylor_statistics(ICN_Raw,IMD,'Data');
