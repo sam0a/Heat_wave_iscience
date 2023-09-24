@@ -1,0 +1,218 @@
+f=figure(1)
+[f1,xi1] =ksdensity(temp,'Bandwidth',0.5);
+plot(xi1,f1,'color',[0.00,0.00,0.00],'LineWidth',3); 1.00,0.00,0.00
+hold on
+[f2,xi2] =ksdensity(ICC_temp,'Bandwidth',0.5);
+plot(xi2,f2,'color',[0.07,0.62,1.00],'LineWidth',1.2);
+hold on
+[f3,xi3] =ksdensity(ICC_temp_bc,'Bandwidth',0.5);
+plot(xi3,f3,'--','color',[0.07,0.62,1.00],'LineWidth',2);
+hold on
+[f4,xi4] =ksdensity(ICQ_temp,'Bandwidth',0.5);
+plot(xi4,f4,'color',[0.05,0.05,0.52],'LineWidth',1.2);
+hold on
+[f5,xi5] =ksdensity(ICQ_temp_bc,'Bandwidth',0.5);
+plot(xi5,f5,'--','color',[0.05,0.05,0.52],'LineWidth',2);
+hold on
+[f6,xi6] =ksdensity(ICN_temp,'Bandwidth',0.5);
+plot(xi6,f6,'color',[0.30,0.75,0.93],'LineWidth',1.2);
+hold on
+[f7,xi7] =ksdensity(ICN_temp_bc,'Bandwidth',0.5);
+plot(xi7,f7,'--','color',[0.30,0.75,0.93],'LineWidth',2);
+hold on
+[f8,xi8] =ksdensity(IIP_temp,'Bandwidth',0.5);
+plot(xi8,f8,'color',[0.00,1.00,1.00],'LineWidth',1.2);
+hold on
+[f9,xi9] =ksdensity(IIP_temp_bc,'Bandwidth',0.5);
+plot(xi9,f9,'--','color',[0.00,1.00,1.00],'LineWidth',2);
+hold on
+[f10,xi10] =ksdensity(IMP_temp,'Bandwidth',0.5);
+plot(xi10,f10,'color',[0.03,0.03,0.24],'LineWidth',1.2);
+hold on
+[f11,xi11]= ksdensity(IMP_temp_bc,'Bandwidth',0.5);
+plot(xi11,f11,'--','color',[0.03,0.03,0.24],'LineWidth',2);
+hold on
+[f12,xi12]= ksdensity(INO_temp,'Bandwidth',0.5);
+plot(xi12,f12,'color',[0.09,0.38,0.32],'LineWidth',1.2);
+hold on
+[f13,xi13]= ksdensity(INO_temp_bc,'Bandwidth',0.5);
+plot(xi13,f13,'--','color',[0.09,0.38,0.32],'LineWidth',2);
+hold on
+[f14,xi14]= ksdensity(RE_temp,'Bandwidth',0.5);
+plot(xi14,f14,'color',[1.00,1.00,0.07],'LineWidth',1.2);
+hold on
+[f15,xi15]= ksdensity(RE_temp_bc,'Bandwidth',0.5);
+plot(xi15,f15,'--','color',[1.00,1.00,0.07],'LineWidth',2);
+hold on
+[f16,xi16]= ksdensity(ICH_temp,'Bandwidth',0.5);
+plot(xi16,f16,'color',[0.43,0.13,0.49],'LineWidth',1.2);
+hold on
+[f17,xi17]= ksdensity(ICH_temp_bc,'Bandwidth',0.5);
+plot(xi17,f17,'--','color',[0.43,0.13,0.49],'LineWidth',1.2);
+hold on
+[f18,xi18]= ksdensity(SCM5_temp,'Bandwidth',0.5);
+plot(xi18,f18,'color',[1.00,0.00,0.00],'LineWidth',2);
+hold on
+[f19,xi19]= ksdensity(SCM5_temp_bc,'Bandwidth',0.5);
+plot(xi19,f19,'--','color',[1.00,0.00,0.00],'LineWidth',1.2);
+hold on
+[f20,xi20]= ksdensity(SCN_temp,'Bandwidth',0.5);
+plot(xi20,f20,'color',[1.00,0.07,0.65],'LineWidth',2);
+hold on
+[f21,xi21]= ksdensity(SCN_temp_bc,'Bandwidth',0.5);
+plot(xi21,f21,'--','color',[1.00,0.07,0.65],'LineWidth',1.2);
+hold on
+[f22,xi22]= ksdensity(SGF_temp,'Bandwidth',0.5);
+plot(xi22,f22,'color',[0.64,0.08,0.18],'LineWidth',1.2);
+hold on
+[f23,xi23]= ksdensity(SGF_temp_bc,'Bandwidth',0.5);
+plot(xi23,f23,'--','color',[0.64,0.08,0.18],'LineWidth',2);
+hold on
+[f24,xi24]= ksdensity(SHD_temp,'Bandwidth',0.5);
+plot(xi24,f24,'color',[0.90,0.47,0.73],'LineWidth',1.2);
+hold on
+[f25,xi25]= ksdensity(SHD_temp_bc,'Bandwidth',0.5);
+plot(xi25,f25,'--','color',[0.90,0.47,0.73],'LineWidth',2);
+hold on
+[f26,xi26]= ksdensity(SIP_temp,'Bandwidth',0.5);
+plot(xi26,f26,'color',[0.39,0.04,0.10],'LineWidth',1.2);
+hold on
+[f27,xi27]= ksdensity(SIP_temp_bc,'Bandwidth',0.5);
+plot(xi27,f27,'--','color',[0.39,0.04,0.10],'LineWidth',2);
+hold on
+[f28,xi28]= ksdensity(SMI_temp,'Bandwidth',0.5);
+plot(xi28,f28,'color',[0.94,0.20,0.20],'LineWidth',1.2);
+hold on
+[f29,xi29]= ksdensity(SMI_temp_bc,'Bandwidth',0.5);
+plot(xi29,f29,'--','color',[0.94,0.20,0.20],'LineWidth',2);
+hold on
+[f30,xi30]= ksdensity(SMP_temp,'Bandwidth',0.5);
+plot(xi30,f30,'color',[0.67,0.26,0.09],'LineWidth',1.2);
+hold on
+[f31,xi31]= ksdensity(SMP_temp_bc,'Bandwidth',0.5);
+plot(xi31,f31,'--','color',[0.67,0.26,0.09]','LineWidth',2);
+hold on
+[f32,xi32]= ksdensity(SNO_temp,'Bandwidth',0.5);
+plot(xi32,f32,'color',[0.43,0.27,0.27],'LineWidth',1.2);
+hold on
+[f33,xi33]= ksdensity(SNO_temp_bc,'Bandwidth',0.5);
+plot(xi33,f33,'--','color',[0.43,0.27,0.27],'LineWidth',2);
+hold on
+[f34,xi34]= ksdensity(SCS_temp,'Bandwidth',0.5);
+plot(xi34,f34,'color',[1.00,0.01,0.34],'LineWidth',1.2);
+hold on
+[f35,xi35]= ksdensity(SCS_temp_bc,'Bandwidth',0.5);
+plot(xi35,f35,'--','color',[1.00,0.01,0.34],'LineWidth',2);
+hold on
+[f36,xi36]= ksdensity(IITM_MME_temp,'Bandwidth',0.5);
+plot(xi36,f36,'color',[0.15,0.70,0.18],'LineWidth',1.2);
+hold on
+[f37,xi37]= ksdensity(IITM_MME_temp_bc,'Bandwidth',0.5);
+plot(xi37,f37,'--','color',[0.15,0.70,0.18],'LineWidth',2); 
+hold on
+[f38,xi38]= ksdensity(SMHI_MME_temp,'Bandwidth',0.5);
+plot(xi38,f38,'color',[0.69,0.13,0.93],'LineWidth',1.2);
+hold on
+[f39,xi39]= ksdensity(SMHI_MME_temp_bc,'Bandwidth',0.5);
+plot(xi39,f39,'--','color',[0.69,0.13,0.93],'LineWidth',2);
+[f40,xi40]= ksdensity(ACCESS1_temp,'Bandwidth',0.5);
+ plot(xi40,f40,'color',[0.29,0.42,0.11],'LineWidth',1.2);
+ [f41,xi41]= ksdensity(ACCESS1_temp_bc,'Bandwidth',0.5);
+plot(xi41,f41,'--','color',[0.29,0.42,0.11],'LineWidth',2);
+[f42,xi42]= ksdensity(CCSM4_temp,'Bandwidth',0.5);
+ plot(xi42,f42,'color',[0.06,0.89,0.10],'LineWidth',1.2);
+ [f43,xi43]= ksdensity(CCSM4_temp_bc,'Bandwidth',0.5);
+plot(xi43,f43,'--','color',[0.06,0.89,0.10],'LineWidth',2);
+[f44,xi44]= ksdensity(CNRM_CM5_temp,'Bandwidth',0.5);
+ plot(xi44,f44,'color',[0.15,0.72,0.46],'LineWidth',1.2);
+ [f45,xi45]= ksdensity(CNRM_CM5_temp_bc,'Bandwidth',0.5);
+plot(xi45,f45,'--','color',[0.15,0.72,0.46],'LineWidth',2);
+[f46,xi46]= ksdensity(GFDL_CM3_temp,'Bandwidth',0.5);
+ plot(xi46,f46,'color',[0.60,0.78,0.08],'LineWidth',1.2);
+ [f47,xi47]= ksdensity(GFDL_CM3_temp_bc,'Bandwidth',0.5);
+plot(xi47,f47,'--','color',[0.60,0.78,0.08],'LineWidth',2);
+ [f48,xi48]= ksdensity(MPI_ESM_LR_temp,'Bandwidth',0.5);
+ plot(xi48,f48,'color',[0.04,0.14,0.04],'LineWidth',1.2);
+ [f49,xi49]= ksdensity(MPI_ESM_LR_temp_bc,'Bandwidth',0.5);
+plot(xi49,f49,'--','color',[0.04,0.14,0.04],'LineWidth',2);
+ [f50,xi50]= ksdensity(NorESM1_M_temp,'Bandwidth',0.5);
+ plot(xi50,f50,'color',[0.75,0.99,0.17],'LineWidth',1.2);
+ [f51,xi51]= ksdensity(NorESM1_M_temp_bc,'Bandwidth',0.5);
+plot(xi51,f51,'--','color',[0.75,0.99,0.17],'LineWidth',2);
+[f52,xi52]= ksdensity(LMDZ_temp,'Bandwidth',0.5);
+ plot(xi52,f52,'color',[0.93,0.69,0.13],'LineWidth',1.2);
+ [f53,xi53]= ksdensity(LMDZ_temp_bc,'Bandwidth',0.5);
+plot(xi53,f53,'--','color',[0.93,0.69,0.13],'LineWidth',2);
+[f54,xi54]= ksdensity(IITM_GFDL_temp,'Bandwidth',0.5);
+ plot(xi54,f54,'color',[0.89,0.89,0.07],'LineWidth',1.2);
+ [f55,xi55]= ksdensity(IITM_GFDL_temp_bc,'Bandwidth',0.5);
+plot(xi55,f55,'--','color',[0.89,0.89,0.07],'LineWidth',2);
+[f56,xi56]= ksdensity(CCAM_MME_temp,'Bandwidth',0.5);
+ plot(xi56,f56,'color',[0.53,0.45,0.01],'LineWidth',1.2);
+ [f57,xi57]= ksdensity(CCAM_MME_temp_bc,'Bandwidth',0.5);
+plot(xi57,f57,'--','color',[0.53,0.45,0.01],'LineWidth',2);
+[f58,xi58]= ksdensity(LMDZ_MME_temp,'Bandwidth',0.5);
+ plot(xi58,f58,'color',[0.49,0.27,0.06],'LineWidth',1.2);
+ [f59,xi59]= ksdensity(LMDZ_MME_temp_bc,'Bandwidth',0.5);
+plot(xi59,f59,'--','color',[0.49,0.27,0.06],'LineWidth',2);
+ 
+
+legend({'Observed','IITM_CanESM2_Raw','IITM_CanESM2', 'IITM_CSIRO-Mk3.6_Raw', 'IITM_CSIRO-Mk3.6', 'IITM_CNRM-CM5_Raw','IITM_CNRM-CM5','IITM_IPSL-CM5A-LR_Raw','IITM_IPSL-CM5A-LR','IITM_MPI-ESM-MR_Raw','IITM_MPI-ESM-MR','IITM_GFDL-ESM2M_Raw', 'IITM_GFDL-ESM2M','RE_MPI-ESM-LR','RE_MPI-ESM-LR_Raw','SMHI_EC-EARTH_Raw','SMHI_EC-EARTH','SMHI_CNRM-CM5_Raw', 'SMHI_CNRM-CM5','SMHI_CanESM2_Raw','SMHI_CanESM2','SMHI_GFDL-ESM2M_Raw','SMHI_GFDL-ESM2M','SMHI_HadGEM2-ES_Raw','SMHI_HadGEM2-ES','SMHI_IPSL-CM5A-MR_Raw', 'SMHI_IPSL-CM5A-MR','SMHI_MIROC5_Raw','SMHI_MIROC5','SMHI_MPI-ESM-LR_Raw','SMHI_MPI-ESM-LR','SMHI_NorESM1-M_Raw','SMHI_NorESM1-M','SMHI_CSIRO-Mk3.6_Raw','SMHI_CSIRO-Mk3.6','IITM_MME_Raw','IITM_MME','SMHI_MME_Raw','SMHI_MME','ACCESS1.0','ACESS1.0_Raw','CCSM4','CCSM4_Raw','CNRM-CM5','CNRM-CM5_Raw','GFDL-CM3','GFDL-CM3_Raw','MPI-ESM-LR','MPI-ESM-LR_Raw','NorESM1-M','NorESM1-M_Raw','RegCM_LMDZ4','RegCM_LMDZ4_Raw','RegCM_GFDL-ESM2M','RegCM_GFDL-ESM2M_Raw','CCAM_MME','CCAM_MME_Raw','RegCM_MME','RegCM_MME_Raw'},'Location','northwest','NumColumns',2,'FontSize',12)
+legend('boxoff')
+ax = gca;
+ax.LineWidth = 1.5
+ax.FontSize = 24;
+ax.Units = 'pixels'
+ax.Position = [500 200 950 720]
+ax.PlotBoxAspectRatio = [1 0.65 0.65]
+ax.TickDir = 'out';
+xlabel('Temperature(˚C)','FontSize',28,'FontWeight','bold');
+ylabel('Probability','FontSize',28,'FontWeight','bold');
+box off
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+f=figure(1)
+[f1,xi1] =ksdensity(temp,'Bandwidth',0.5);
+plot(xi1,f1,'color',[1.00,0.00,0.00],'LineWidth',3); 
+hold on
+[f40,xi40]= ksdensity(ACCESS1_temp,'Bandwidth',0.5);
+ plot(xi40,f40,'color',[0.29,0.42,0.11],'LineWidth',1.2);
+ [f41,xi41]= ksdensity(ACCESS1_temp_bc,'Bandwidth',0.5);
+plot(xi41,f41,'--','color',[0.29,0.42,0.11],'LineWidth',2);
+[f42,xi42]= ksdensity(CCSM4_temp,'Bandwidth',0.5);
+ plot(xi42,f42,'color',[0.06,0.89,0.10],'LineWidth',1.2);
+ [f43,xi43]= ksdensity(CCSM4_temp_bc,'Bandwidth',0.5);
+plot(xi43,f43,'--','color',[0.06,0.89,0.10],'LineWidth',2);
+[f44,xi44]= ksdensity(CNRM_CM5_temp,'Bandwidth',0.5);
+ plot(xi44,f44,'color',[0.15,0.72,0.46],'LineWidth',1.2);
+ [f45,xi45]= ksdensity(CNRM_CM5_temp_bc,'Bandwidth',0.5);
+plot(xi45,f45,'--','color',[0.15,0.72,0.46],'LineWidth',2);
+[f46,xi46]= ksdensity(GFDL_CM3_temp,'Bandwidth',0.5);
+ plot(xi46,f46,'color',[0.60,0.78,0.08],'LineWidth',1.2);
+ [f47,xi47]= ksdensity(GFDL_CM3_temp_bc,'Bandwidth',0.5);
+plot(xi47,f47,'--','color',[0.60,0.78,0.08],'LineWidth',2);
+ [f48,xi48]= ksdensity(MPI_ESM_LR_temp,'Bandwidth',0.5);
+ plot(xi48,f48,'color',[0.04,0.14,0.04],'LineWidth',1.2);
+ [f49,xi49]= ksdensity(MPI_ESM_LR_temp_bc,'Bandwidth',0.5);
+plot(xi49,f49,'--','color',[0.04,0.14,0.04],'LineWidth',2);
+ [f50,xi50]= ksdensity(NorESM1_M_temp,'Bandwidth',0.5);
+ plot(xi50,f50,'color',[0.75,0.99,0.17],'LineWidth',1.2);
+ [f51,xi51]= ksdensity(NorESM1_M_temp_bc,'Bandwidth',0.5);
+plot(xi51,f51,'--','color',[0.75,0.99,0.17],'LineWidth',2);
+[f56,xi56]= ksdensity(CCAM_MME_temp,'Bandwidth',0.5);
+ plot(xi56,f56,'color',[0.53,0.45,0.01],'LineWidth',1.2);
+ [f57,xi57]= ksdensity(CCAM_MME_temp_bc,'Bandwidth',0.5);
+plot(xi57,f57,'--','color',[0.53,0.45,0.01],'LineWidth',2);
+hold on
+legend('Observed','CCAM_ACCESS1.0_Raw','CCAM_ACCESS1.0','CCAM_CCSM4_Raw','CCAM_CCSM4','CCAM_CNRM-CM5_Raw', 'CCAM_CNRM-CM5', 'CCAM_GFDL-CM3_Raw','CCAM_GFDL-CM3','CCAM_NorESM1-M_Raw','CCAM_NorESM1-M','CCAM_MPI-ESM-LR_Raw','CCAM_MPI-ESM-LR','CCAM_MME_Raw','CCAM_MME')
+legend('boxoff')
+ax = gca;
+ax.LineWidth = 1.5
+ax.FontSize = 24;
+ax.Units = 'pixels'
+ax.Position = [500 200 950 720]
+ax.PlotBoxAspectRatio = [1 0.65 0.65]
+ax.TickDir = 'out';
+xlabel('Temperature(˚C)','FontSize',28,'FontWeight','bold');
+ylabel('Probability','FontSize',28,'FontWeight','bold');
+box off
