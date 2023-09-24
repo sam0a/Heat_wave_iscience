@@ -1,0 +1,122 @@
+figure 
+cdfplot(temp)
+hold on
+cdfplot(ICC_temp)
+hold on
+cdfplot(ICC_temp_bc)
+hold on
+cdfplot(ICQ_temp)
+hold on
+cdfplot(ICQ_temp_bc)
+hold on
+cdfplot(ICN_temp)
+hold on
+cdfplot(ICN_temp_bc)
+hold on
+cdfplot(IIP_temp) 
+hold on
+cdfplot(IIP_temp_bc)
+hold on
+cdfplot(IMP_temp)
+hold on
+cdfplot(IMP_temp_bc)
+hold on
+cdfplot(INO_temp)
+hold on
+cdfplot(INO_temp_bc)
+hold on
+cdfplot(RE_temp)
+hold on
+cdfplot(RE_temp_bc)
+hold on
+cdfplot(ICH_temp)
+hold on
+cdfplot(ICH_temp_bc)
+hold on
+cdfplot(SCM5_temp)
+hold on
+cdfplot(SCM5_temp_bc)
+hold on
+cdfplot(SCN_temp)
+hold on
+cdfplot(SCN_temp_bc)
+hold on
+cdfplot(SGF_temp)
+hold on
+cdfplot(SGF_temp_bc)
+hold on
+cdfplot(SHD_temp)
+hold on
+cdfplot(SHD_temp_bc)
+hold on
+cdfplot(SIP_temp)
+hold on
+cdfplot(SIP_temp_bc)
+hold on
+cdfplot(SMI_temp)
+hold on
+cdfplot(SMI_temp_bc)
+hold on
+cdfplot(SMP_temp)
+hold on
+cdfplot(SMP_temp_bc)
+hold on
+cdfplot(SNO_temp)
+hold on
+cdfplot(SNO_temp_bc)
+hold on
+cdfplot(SCS_temp)
+hold on
+cdfplot(SCS_temp_bc)
+hold on
+cdfplot(IITM_MME_temp)
+hold on
+cdfplot(IITM_MME_temp_bc)
+hold on
+cdfplot(SMHI_MME_temp)
+hold on
+cdfplot(SMHI_MME_temp_bc)
+hold on 
+cdfplot(ACCESS1_temp)
+hold on
+cdfplot(ACCESS1_temp_bc)
+hold on
+cdfplot(CCSM4_temp)
+hold on
+cdfplot(CCSM4_temp_bc)
+hold on
+cdfplot(CNRM_CM5_temp)
+hold on
+cdfplot(CNRM_CM5_temp_bc)
+hold on
+cdfplot(GFDL_CM3_temp)
+hold on
+cdfplot(GFDL_CM3_temp_bc)
+hold on
+cdfplot(NorESM1_M_temp)                  
+hold on
+cdfplot(NorESM1_M_temp_bc)
+hold on
+cdfplot(MPI_ESM_LR_temp)
+hold on
+cdfplot(MPI_ESM_LR_temp_bc)
+hold on
+cdfplot(LMDZ_temp)
+hold on
+cdfplot(LMDZ_temp_bc)
+hold on
+cdfplot(IITM_GFDL_temp)
+hold on
+cdfplot(IITM_GFDL_temp_bc)
+hold on
+cdfplot(LMDZ_MME_temp)
+hold on 
+cdfplot(LMDZ_MME_temp_bc)
+hold on 
+cdfplot(CCAM_MME_temp)
+hold on 
+cdfplot(CCAM_MME_temp_bc)
+legend('Observed','IITM_CanESM2_Raw','IITM_CanESM2', 'IITM_CSIRO-Mk3.6_Raw', 'IITM_CSIRO-Mk3.6', 'IITM_CNRM-CM5_Raw','IITM_CNRM-CM5','IITM_IPSL-CM5A-LR_Raw','IITM_IPSL-CM5A-LR','IITM_MPI-ESM-MR_Raw','IITM_MPI-ESM-MR','IITM_GFDL-ESM2M_Raw', 'IITM_GFDL-ESM2M','RE_MPI-ESM-LR_Raw','RE_MPI-ESM-LR','SMHI_EC-EARTH_Raw', 'SMHI_EC-EARTH','SMHI_CNRM-CM5_Raw', 'SMHI_CNRM-CM5','SMHI_CanESM2_Raw','SMHI_CanESM2','SMHI_GFDL-ESM2M_Raw','SMHI_GFDL-ESM2M','SMHI_HadGEM2-ES_Raw','SMHI_HadGEM2-ES','SMHI_IPSL-CM5A-MR_Raw', 'SMHI_IPSL-CM5A-MR','SMHI_MIROC5_Raw','SMHI_MIROC5','SMHI_MPI-ESM-LR_Raw','SMHI_MPI-ESM-LR','SMHI_NorESM1-M_Raw','SMHI_NorESM1-M','SMHI_CSIRO-Mk3.6_Raw','SMHI_CSIRO-Mk3.6','IITM_MME_Raw','IITM_MME','SMHI_MME_Raw','SMHI_MME','ACCESS1.0_Raw','ACCESS1.0','CCSM4_Raw','CCSM4','CNRM-CM5_Raw', 'CNRM-CM5', 'GFDL-CM3_Raw','GFDL-CM3','NorESM1-M_Raw','NorESM1-M','MPI-ESM-LR_Raw','MPI-ESM-LR','RegCM-LMDZ_Raw','RegCM-LMDZ','RegCM-GFDL-ESM2M_Raw','RegCM-GFDL-ESM2M','LMDZ_MME_Raw','LMDZ_MME','CCAM_MME_Raw','CCAM_MME')
+
+
+
