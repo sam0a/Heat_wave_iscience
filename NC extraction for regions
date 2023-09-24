@@ -1,0 +1,32 @@
+library(sp)
+library(rgdal)
+library(raster)
+library(ncdf4)
+library(raster)
+library(rasterVis)
+library(maptools)
+library(maps)
+setwd("D:/data")
+#nc extraction for hilly region 
+shp<- readOGR("hil.shp")
+pre1<- nc_open("Model_His_MAMJ_bc.nc")
+pre1
+pre1.brick<- brick("Model_His_MAMJ_bc.nc")
+extent(pre1.brick)
+crs(shp)
+extent(shp)
+crs(pre1.brick)
+shp<- spTransform(shp, crs(pre1.brick))
+crs(shp)
+crs(pre1.brick)    
+pre1.mask<- mask(pre1.brick, shp)
+pre1.mask
+pre1.mask[is.na(pre1.mask)] <- 0
+outfile <- "Model_His_MAMJ_bc_hil.nc" 
+crs(pre1.mask) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0" 
+writeRaster(pre1.mask, outfile, overwrite=TRUE, format="CDF", varname="tasmax", varunit="degree Celsius", 
+            longname="Daily Temp", xname="lon", yname="lat", zname='Time', zunit='1971-5-1 00:00:00')
+
+#repeat the process for plains and coastal regions by changing shape files
+          
+
