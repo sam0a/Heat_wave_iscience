@@ -1,0 +1,9 @@
+#!/bin/bash
+for file in *.nc
+do
+#
+cdo timmax RCM_His_MAMJ_bc.nc RCM_His_MAMJ_bc_seas_TXx.nc
+cdo timmin RCM_His_MAMJ_bc.nc RCM_His_MAMJ_bc_seas_TXn.nc
+cdo timpctl,95 RCM_His_MAMJ_bc.nc RCM_His_MAMJ_bc_seas_TXn.nc RCM_His_MAMJ_bc_seas_TXx.nc RCM_His_MAMJ_bc_TX95t.nc
+cdo timpctl,99 RCM_His_MAMJ_bc.nc RCM_His_MAMJ_bc_seas_TXn.nc RCM_His_MAMJ_bc_seas_TXx.nc RCM_His_MAMJ_bc_TX99t.nc
+done
