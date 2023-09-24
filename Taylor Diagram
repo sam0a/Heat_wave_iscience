@@ -1,0 +1,115 @@
+
+
+
+%%Read excel file containing raw and bias corrected model mean data 
+
+taylor_stats1 = taylor_statistics(ICN,IMD,'Data');
+taylor_stats2 = taylor_statistics(ICN_Raw,IMD,'Data');
+taylor_stats3 = taylor_statistics(ICC,IMD,'Data');
+taylor_stats4 = taylor_statistics(ICC_Raw,IMD,'Data');
+taylor_stats5 = taylor_statistics(ICQ,IMD,'Data');
+taylor_stats6 = taylor_statistics(ICQ_Raw,IMD,'Data');
+taylor_stats7 = taylor_statistics(IIP,IMD,'Data');
+taylor_stats8 = taylor_statistics(IIP_Raw,IMD,'Data');
+taylor_stats9 = taylor_statistics(IMP,IMD,'Data');
+taylor_stats10 = taylor_statistics(IMP_Raw,IMD,'Data');
+taylor_stats11 = taylor_statistics(INO,IMD,'Data');
+taylor_stats12 = taylor_statistics(INO_Raw,IMD,'Data');
+taylor_stats13 = taylor_statistics(RE,IMD,'Data');
+taylor_stats14 = taylor_statistics(RE_Raw,IMD,'Data');
+taylor_stats15 = taylor_statistics(SHD,IMD,'Data');
+taylor_stats16 = taylor_statistics(SHD_Raw,IMD,'Data');
+taylor_stats17 = taylor_statistics(SCM5,IMD,'Data');
+taylor_stats18 = taylor_statistics(SCM5_Raw,IMD,'Data');
+taylor_stats19 = taylor_statistics(SCN,IMD,'Data');
+taylor_stats20 = taylor_statistics(SCN_Raw,IMD,'Data');
+taylor_stats21 = taylor_statistics(SCS,IMD,'Data');
+taylor_stats22 = taylor_statistics(SCS_Raw,IMD,'Data');
+taylor_stats23 = taylor_statistics(SGF,IMD,'Data');
+taylor_stats24 = taylor_statistics(SGF_Raw,IMD,'Data');
+taylor_stats25 = taylor_statistics(SIP,IMD,'Data');
+taylor_stats26 = taylor_statistics(SIP_Raw,IMD,'Data');
+taylor_stats27 = taylor_statistics(SMI,IMD,'Data');
+taylor_stats28 = taylor_statistics(SMI_Raw,IMD,'Data');
+taylor_stats29 = taylor_statistics(SMP,IMD,'Data');
+taylor_stats30 = taylor_statistics(SMP_Raw,IMD,'Data');
+taylor_stats31 = taylor_statistics(SNO,IMD,'Data');
+taylor_stats32 = taylor_statistics(SNO_Raw,IMD,'Data');
+taylor_stats33 = taylor_statistics(ICH,IMD,'Data');
+taylor_stats34 = taylor_statistics(ICH_Raw,IMD,'Data');
+taylor_stats35 = taylor_statistics(SMHI_MME,IMD,'Data');
+taylor_stats36 = taylor_statistics(SMHI_MME_Raw,IMD,'Data');
+taylor_stats37 = taylor_statistics(IITM_MME,IMD,'Data');
+taylor_stats38 = taylor_statistics(IITM_MME_Raw,IMD,'Data');
+
+% Store statistics in arrays
+sdev = [taylor_stats1.sdev(1); taylor_stats1.sdev(2);taylor_stats2.sdev(2);taylor_stats3.sdev(2);taylor_stats4.sdev(2);taylor_stats5.sdev(2);taylor_stats6.sdev(2);taylor_stats7.sdev(2);taylor_stats8.sdev(2);taylor_stats9.sdev(2);taylor_stats10.sdev(2);taylor_stats11.sdev(2);taylor_stats12.sdev(2);taylor_stats13.sdev(2);taylor_stats14.sdev(2);taylor_stats15.sdev(2);taylor_stats16.sdev(2);taylor_stats17.sdev(2);taylor_stats18.sdev(2);taylor_stats19.sdev(2);taylor_stats20.sdev(2);taylor_stats21.sdev(2);taylor_stats22.sdev(2);taylor_stats23.sdev(2);taylor_stats24.sdev(2);taylor_stats25.sdev(2);taylor_stats26.sdev(2);taylor_stats27.sdev(2);taylor_stats28.sdev(2);taylor_stats29.sdev(2);taylor_stats30.sdev(2);taylor_stats31.sdev(2);taylor_stats32.sdev(2);taylor_stats33.sdev(2);taylor_stats34.sdev(2);taylor_stats35.sdev(2);taylor_stats36.sdev(2);taylor_stats37.sdev(2);taylor_stats38.sdev(2)];
+crmsd = [taylor_stats1.crmsd(1); taylor_stats1.crmsd(2);taylor_stats2.crmsd(2);taylor_stats3.crmsd(2);taylor_stats4.crmsd(2);taylor_stats5.crmsd(2);taylor_stats6.crmsd(2);taylor_stats7.crmsd(2);taylor_stats8.crmsd(2);taylor_stats9.crmsd(2);taylor_stats10.crmsd(2);taylor_stats11.crmsd(2);taylor_stats12.crmsd(2);taylor_stats13.crmsd(2);taylor_stats14.crmsd(2);taylor_stats15.crmsd(2);taylor_stats16.crmsd(2);taylor_stats17.crmsd(2);taylor_stats18.crmsd(2);taylor_stats19.crmsd(2);taylor_stats20.crmsd(2);taylor_stats21.crmsd(2);taylor_stats22.crmsd(2);taylor_stats23.crmsd(2);taylor_stats24.crmsd(2);taylor_stats25.crmsd(2);taylor_stats26.crmsd(2);taylor_stats27.crmsd(2);taylor_stats28.crmsd(2);taylor_stats29.crmsd(2);taylor_stats30.crmsd(2);taylor_stats31.crmsd(2);taylor_stats32.crmsd(2);taylor_stats33.crmsd(2);taylor_stats34.crmsd(2);taylor_stats35.crmsd(2);taylor_stats36.crmsd(2);taylor_stats37.crmsd(2);taylor_stats38.crmsd(2)];
+ccoef = [taylor_stats1.ccoef(1); taylor_stats1.ccoef(2);taylor_stats2.ccoef(2);taylor_stats3.ccoef(2);taylor_stats4.ccoef(2);taylor_stats5.ccoef(2);taylor_stats6.ccoef(2);taylor_stats7.ccoef(2);taylor_stats8.ccoef(2);taylor_stats9.ccoef(2);taylor_stats10.ccoef(2);taylor_stats11.ccoef(2);taylor_stats12.ccoef(2);taylor_stats13.ccoef(2);taylor_stats14.ccoef(2);taylor_stats15.ccoef(2);taylor_stats16.ccoef(2);taylor_stats17.ccoef(2);taylor_stats18.ccoef(2);taylor_stats19.ccoef(2);taylor_stats20.ccoef(2);taylor_stats21.ccoef(2);taylor_stats22.ccoef(2);taylor_stats23.ccoef(2);taylor_stats24.ccoef(2);taylor_stats25.ccoef(2);taylor_stats26.ccoef(2);taylor_stats27.ccoef(2);taylor_stats28.ccoef(2);taylor_stats29.ccoef(2);taylor_stats30.ccoef(2);taylor_stats31.ccoef(2);taylor_stats32.ccoef(2);taylor_stats33.ccoef(2);taylor_stats34.ccoef(2);taylor_stats35.ccoef(2);taylor_stats36.ccoef(2);taylor_stats37.ccoef(2);taylor_stats38.ccoef(2)];
+
+label = {'Observed','IITM_CNRM-CM5','IITM_CNRM-CM5_Raw','IITM_CanESM2','IITM_CanESM2_Raw','IITM_CSIRO-Mk3','IITM_CSIRO-Mk3_Raw','IITM_IPSL-CM5A-LR','IITM_IPSL-CM5A-LR_Raw','IITM_MPI-ESM-MR','IITM_MPI-ESM-MR_Raw','IITM_GFDL-ESM2M','IITM_GFDL-ESM2M_Raw','RE_MPI-ESM-LR','RE_MPI-ESM-LR_Raw','SMHI_HadGEM2-ES','SMHI_HadGEM2-ES_Raw','SMHI_CNRM-CM5','SMHI_CNRM-CM5_Raw','SMHI_CanESM2','SMHI_CanESM2_Raw','SMHI_CSIRO-Mk3','SMHI_CSIRO-Mk3_Raw','SMHI_GFDL-ESM2M','SMHI_GFDL-ESM2M_Raw','SMHI_IPSL-CM5A-MR','SMHI_IPSL-CM5A-MR_Raw','SMHI_MIROC5','SMHI_MIROC5_Raw','SMHI_MPI-ESM-LR','SMHI_MPI-ESM-LR_Raw','SMHI_NorESM1-M','SMHI_NorESM1-M_Raw','SMHI_EC-EARTH','SMHI_EC-EARTH_Raw','SMHI_MME','SMHI_MME_Raw','IITM_MME','IITM_MME_Raw'}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sdev = sdev'
+crmsd = crmsd'
+ccoef = ccoef'
+gageID= {'Observed','IITM_CNRM-CM5','IITM_CNRM-CM5_Raw','IITM_CanESM2','IITM_CanESM2_Raw','IITM_CSIRO-Mk3','IITM_CSIRO-Mk3_Raw','IITM_IPSL-CM5A-LR','IITM_IPSL-CM5A-LR_Raw','IITM_MPI-ESM-MR','IITM_MPI-ESM-MR_Raw','IITM_GFDL-ESM2M','IITM_GFDL-ESM2M_Raw','RE_MPI-ESM-LR','RE_MPI-ESM-LR_Raw','SMHI_HadGEM2-ES','SMHI_HadGEM2-ES_Raw','SMHI_CNRM-CM5','SMHI_CNRM-CM5_Raw','SMHI_CanESM2','SMHI_CanESM2_Raw','SMHI_CSIRO-Mk3','SMHI_CSIRO-Mk3_Raw','SMHI_GFDL-ESM2M','SMHI_GFDL-ESM2M_Raw','SMHI_IPSL-CM5A-MR','SMHI_IPSL-CM5A-MR_Raw','SMHI_MIROC5','SMHI_MIROC5_Raw','SMHI_MPI-ESM-LR','SMHI_MPI-ESM-LR_Raw','SMHI_NorESM1-M','SMHI_NorESM1-M_Raw','SMHI_EC-EARTH','SMHI_EC-EARTH_Raw','SMHI_MME','SMHI_MME_Raw','IITM_MME','IITM_MME_Raw'}
+
+T = table(sdev);
+T2 = table(crmsd);
+T3 = table(ccoef);
+T4 = table(gageID);
+T5 = table(T,T2,T3,T4);
+
+
+close all;
+% Set the figure properties (optional)
+set(gcf,'units','inches','position',[0,10.0,14.0,10.0]);
+% set(gcf,'DefaultLineLineWidth',1.5); % linewidth for plots
+set(gcf,'DefaultAxesFontSize',18); % font size of axes text
+
+% Read in data from a mat file: sdev, crmsd, ccoef, and gageID
+%load('taylor_diagram_MME.mat');
+    
+% Change number of data points to illustrate effect of changing number 
+% of columns
+ncol = 2;
+if ncol == 1
+    sdev = sdev(1:39);
+    crmsd = crmsd(1:39);
+    ccoef = ccoef(1:39);
+    gageID = gageID(1:39);
+elseif ncol == 2
+    % Use existing data
+else
+    sdev = [sdev sdev(2:39)];
+    crmsd = [crmsd crmsd(2:39)];
+    ccoef = [ccoef ccoef(2:39)];
+    gageID = [gageID gageID(2:39)];
+end
+
+% Specify labels for points in a cell array using gage ID.
+label = gageID;
+
+% Produce the Taylor diagram.
+%
+% Label the points and change the axis options for SDEV, CRMSD, and CCOEF.
+% Increase the upper limit for the SDEV axis and rotate the CRMSD contour 
+% labels (counter-clockwise from x-axis). Exchange color and line style
+% choices for SDEV, CRMSD, and CCOEFF variables to show effect. Increase
+% the line width of all lines.
+%
+% For an exhaustive list of options to customize your diagram, please 
+% call the function without arguments:
+%	>> taylor_diagram
+alpha = 'clear';
+[hp, ht, axl] = taylor_diagram(sdev,crmsd,ccoef, ...
+    'markerLabel',label, 'markerLegend', 'on', ...
+    'styleSTD', '-', 'colOBS','r', 'markerObs','o', ...
+    'markerSize',12, 'tickRMS',0.0:1.0:3.0, ...
+    'tickRMSangle', 115, 'showlabelsRMS', 'on', ...
+    'titleRMS','on', 'titleOBS','Ref');
+
+% Write plot to file
+writepng(gcf,'taylor10.png');
+
+
