@@ -1,0 +1,33 @@
+###########extracting ncdf data through shapefile and converting into dataframe##########
+library(sp)
+library(rgdal)
+library(raster)
+library(ncdf4)
+setwd("D:/Desktop/Data")
+shp<- readOGR("india.shp")
+pre1<- nc_open("RCM_His_MAMJ_Climatological_mean_bias.nc")
+pre1
+pre1.brick<- brick("RCM_His_MAMJ_Climatological_mean_bias.nc")
+extent(pre1.brick)
+crs(shp)
+crs(pre1.brick)
+shp<- spTransform(shp, crs(pre1.brick))
+crs(shp)
+crs(pre1.brick)
+pre1.mask<- mask(pre1.brick, shp)
+pre1.mask
+pre1.df<- as.data.frame(pre1.mask, xy= TRUE)
+pre1.df<- pre1.df[complete.cases(pre1.df),]
+trans<- t(pre1.df)
+
+write.csv(trans,"RCM_His_MAMJ_Climatological_mean_bias.csv")
+
+
+
+
+ #######masking data through shapefile and exporting into ncdf############
+
+
+
+
+f
