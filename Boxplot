@@ -1,0 +1,23 @@
+
+library(ggplot2)
+R4_F1_in <- read.csv("duration_boxplot.csv")
+d1<-as.data.frame(R4_F1_in)
+d2<-melt(d1, id = "Year")
+colnames(d2)[1] <- "Scenario"
+colnames(d2)[2] <- "Model"
+colnames(d2)[3] <- "HW"
+tiff("Duration.tiff",width = 4 height = 6  res=300)
+p1<-ggplot(d1, aes(x=d1$Scenario, y=d1$HW, fill=d1$Model)) +
+  geom_boxplot(alpha=0.4)+
+  ggtitle("") +
+  xlab("Scenario") + ylab("Duration (days)")+
+  labs(fill = "RCM")
+#scale_fill_brewer(palette="Set3")
+p1 + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+           panel.background = element_blank(), axis.line = element_line(colour = "black"),axis.title.x = element_text(size=18),
+           axis.title.y = element_text(size=14),axis.text.x = element_text( size = 12),
+           axis.text.y = element_text(size = 12, family = "sans"))
+
+# insert ggplot code
+dev.off()
+
