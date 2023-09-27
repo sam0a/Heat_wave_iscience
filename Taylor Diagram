@@ -1,5 +1,45 @@
 %%Read excel file containing raw and bias corrected model mean data for historical period
-
+Taylor = xlsread('Taylor_mean.xlsx');
+IMD.Data =  xlsread('Taylor_mean.xlsx','B:B');
+ICN.Data = xlsread('Taylor_mean.xlsx','C:C');
+ICN_Raw.Data = xlsread('Taylor_mean.xlsx','D:D');
+ICC.Data = xlsread('Taylor_mean.xlsx','E:E');
+ICC_Raw.Data = xlsread('Taylor_mean.xlsx','F:F');
+ICQ.Data = xlsread('Taylor_mean.xlsx','G:G');
+ICQ_Raw.Data = xlsread('Taylor_mean.xlsx','H:H');
+IIP.Data = xlsread('Taylor_mean.xlsx','I:I');
+IIP_Raw.Data = xlsread('Taylor_mean.xlsx','J:J');
+IMP.Data = xlsread('Taylor_mean.xlsx','K:K');     
+IMP_Raw.Data = xlsread('Taylor_mean.xlsx','L:L');
+INO.Data = xlsread('Taylor_mean.xlsx','M:M');
+INO_Raw.Data = xlsread('Taylor_mean.xlsx','N:N');
+RE.Data = xlsread('Taylor_mean.xlsx','O:O');
+RE_Raw.Data = xlsread('Taylor_mean.xlsx','P:P');
+SHD.Data = xlsread('Taylor_mean.xlsx','Q:Q');            
+SHD_Raw.Data = xlsread('Taylor_mean.xlsx','R:R');
+SCM5.Data = xlsread('Taylor_mean.xlsx','S:S');
+SCM5_Raw.Data = xlsread('Taylor_mean.xlsx','T:T');
+SCN.Data = xlsread('Taylor_mean.xlsx','U:U');
+SCN_Raw.Data = xlsread('Taylor_mean.xlsx','V:V');
+SCS.Data = xlsread('Taylor_mean.xlsx','W:W');
+SCS_Raw.Data = xlsread('Taylor_mean.xlsx','X:X');
+SGF.Data = xlsread('Taylor_mean.xlsx','Y:Y');
+SGF_Raw.Data = xlsread('Taylor_mean.xlsx','Z:Z');
+SIP.Data = xlsread('Taylor_mean.xlsx','AA:AA');
+SIP_Raw.Data = xlsread('Taylor_mean.xlsx','AB:AB');
+SMI.Data = xlsread('Taylor_mean.xlsx','AC:AC');
+SMI_Raw.Data = xlsread('Taylor_mean.xlsx','AD:AD');
+SMP.Data = xlsread('Taylor_mean.xlsx','AE:AE');
+SMP_Raw.Data = xlsread('Taylor_mean.xlsx','AF:AF');
+SNO.Data = xlsread('Taylor_mean.xlsx','AG:AG');
+SNO_Raw.Data = xlsread('Taylor_mean.xlsx','AH:AH');
+ICH.Data = xlsread('Taylor_mean.xlsx','AI:AI');
+ICH_Raw.Data = xlsread('Taylor_mean.xlsx','AJ:AJ');
+IITM_MME.Data = xlsread('Taylor_mean.xlsx','AK:AK');
+IITM_MME_Raw.Data = xlsread('Taylor_mean.xlsx','AL:AL');
+SMHI_MME.Data = xlsread('Taylor_mean.xlsx','AM:AM');
+SMHI_MME_Raw.Data = xlsread('Taylor_mean.xlsx','AN:AN');
+ 
 %%calculate taylor statistics
 
 taylor_stats1 = taylor_statistics(ICN,IMD,'Data');
