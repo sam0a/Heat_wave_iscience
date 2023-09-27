@@ -1,3 +1,6 @@
+The follwing indices have been calculate using CDO version 1.7.0
+
+
 #!/bin/bash
 for file in *.nc
 do
